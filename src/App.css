@@ -1,38 +1,162 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+html {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+  --main-color: #242424;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 
-.App-header {
-  background-color: #282c34;
+body {
+  margin: 0;
+  background-color: #f9f9f9;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  color: black;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+
 }
 
-.App-link {
-  color: #61dafb;
+a {
+  text-decoration: none;
+  color: inherit;
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.container {
+  margin: 0 auto;
+  width: 400px;
+}
+
+
+h1, h2, h3 {
+  line-height: 1.5;
+
+}
+
+h4 {
+  text-transform: uppercase;
+}
+
+main {
+  margin-top: 30px;
+}
+
+.total {
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+}
+
+.total__balance{
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.total__header{
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.total__main{
+  display: flex;
+  justify-content: space-between;
+}
+
+.total__main-item {
+  flex: 1;
+  text-align: center;
+  padding-top: 15px;
+
+}
+
+.total__main-item:first-child{
+  border-right: 1px solid #ccc;
+}
+
+.total__money {
+  font-size: 24px;
+  line-height: 1.5;
+}
+
+.total__money-expenses {
+  color: tomato;
+}
+
+.total__money-income {
+  color: darkgreen;
+}
+
+.operation {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  background-color: #ddd;
+  border-radius: 25px;
+  padding: 15px 15px;
+}
+
+
+.operation__fields{
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding:  10px 15px;
+  margin: 5px 0;
+  font-size: 16px;
+  width: 100%;
+  outline: transparent;
+}
+
+.operation__fields:focus{
+  border: 1px solid darkorange;
+}
+
+.operation__add {
+  background-color: darkorange;
+  border-width: 2px;
+  border-style: solid;
+  border-color: darkorange;
+  color: #fff;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: 700;
+  padding: 20px 0;
+  width: 100%;
+  margin: 15px 0;
+  cursor: pointer;
+}
+
+.operation__add:hover {
+  background-color: white;
+  color: darkorange;
 }

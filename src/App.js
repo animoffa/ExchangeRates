@@ -1,26 +1,60 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./App.css"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = (props) => {
+    return (<div>
+            <h1>Актуальный курс валют</h1>
+            <div className="container">
+                <section className="total">
+                    <div className="total__header">
+                        <h3>Курс на {props.formatDate.getDate() > 9 ? props.formatDate.getDate() : "0" + props.formatDate.getDate()}.
+                            {props.formatDate.getMonth() > 9 ? props.formatDate.getMonth() : "0" + props.formatDate.getMonth()}.
+                            {props.formatDate.getFullYear()}
+                        </h3>
 
+                    </div>
+                    <div className="total__main">
+                        <div className="total__main-item total__income">
+                            <h4>Доллар </h4>
+
+                            <p className="total__money total__money-income">
+                                {props.dollar} ₽
+                            </p>
+                        </div>
+                        <div className="total__main-item total__expenses">
+                            <h4>Евро</h4>
+                            <p className="total__money total__money-expenses">
+                                {props.euro} ₽
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <section className="operation">
+                    <h3>Операции</h3>
+                    <div id="form">
+                        <label>
+                            <button type="submit" className="operation__add" onClick={(e) => {
+                                props.getDollar()
+                            }}>Получить курс доллара
+                            </button>
+                        </label>
+                        <label>
+                            <button type="submit" className="operation__add" onClick={(e) => {
+                                props.getEuro()
+                            }}>Получить курс Евро
+                            </button>
+                        </label>
+                        <button type="submit" className="operation__add" onClick={(e) => {
+                            props.getRate()
+                        }}>Получить все курсы
+                        </button>
+                    </div>
+                </section>
+                <p><a href="https://www.cbr-xml-daily.ru/" className="cb-href">Курсы ЦБ РФ в XML и JSON, API</a></p>
+            </div>
+        </div>
+
+    )
+};
 export default App;
